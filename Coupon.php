@@ -2,17 +2,17 @@
 
 class Coupon
 {
-    public function find(string $code)
+    public function find($code)
     {
         return true;
     }
 
-    public function isActive(string $code)
+    public function isActive($code)
     {
         return true;
     }
 
-    public function isExpired(string $code)
+    public function isExpired($code)
     {
         return false;
     }

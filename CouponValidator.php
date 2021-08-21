@@ -22,8 +22,6 @@ class CouponValidator
         $couponExist->setNextValidate($couponActive);
         $couponActive->setNextValidate($couponExpire);
         $couponExist->validate($code);
-
-
     }
     
 }

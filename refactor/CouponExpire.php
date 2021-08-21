@@ -15,7 +15,7 @@ class CouponExpire
     public function validate($code)
     {
         if ($this->coupon->isExpired($code)){
-            throw new Exception('Code is Expired');
+            throw new \Exception('Code is Expired');
         }
         echo 'Coupon is not Expired ' . PHP_EOL;
 

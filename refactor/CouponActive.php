@@ -18,7 +18,7 @@ class CouponActive
     public function validate($code)
     {
         if (!$this->coupon->isActive($code)){
-            throw new Exception('Code Not Active');
+            throw new \Exception('Code Not Active');
         }
         echo 'Coupon is Active ' . PHP_EOL;
         return $this->goToNextValidator($code);
