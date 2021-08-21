@@ -1,17 +1,7 @@
 <?php
-class CouponExpire
+require_once "AbstractCouponValidator.php";
+class CouponExpire  extends AbstractCouponValidator
 {
-    private $coupon;
-    private $nextValidator;
-
-    public function __construct(Coupon $coupon)
-    {
-        $this->coupon = $coupon;
-    }
-    public function setNextValidate($validator)
-    {
-        $this->nextValidator = $validator;
-    }
     public function validate($code)
     {
         if ($this->coupon->isExpired($code)){
@@ -21,10 +11,5 @@ class CouponExpire
 
         return $this->goToNextValidator($code);
     }
-    private function goToNextValidator($code){
-        if ($this->nextValidator == null){
-            return true;
-        }
-        return $this->nextValidator->validate($code);
-    }
+
 }
